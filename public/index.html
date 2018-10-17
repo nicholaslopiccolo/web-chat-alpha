@@ -1,0 +1,46 @@
+<html>
+
+<head>
+	<title>Chat?Chat</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<!-- frameworks -->
+<script src="jquery-3.3.1.min.js"></script>
+<script src="../socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+
+<script src="init.js"></script>
+
+
+<body>
+	<button id="debug">debug</button>
+	<button id="logout" style="float:right;">logout</button>
+	<div id="global">
+		<div id="start_box">
+			<input type="text" placeholder="nickname" id="nickname" pattern=".{4,16}" required title="4 to 16 characters"><br>
+			<button id="start">START</button>
+		</div>
+		<div id="chat_box">
+			<!-- <button id="option">option</div> -->
+			<div id="chat_text">
+				<div v-for="message in messages">
+						<div class="mymsg" v-show = 'message.owner === me'><h3>Tu: </h3>{{ message.text }}</div>
+						<div class="generalmsg" v-show = 'message.owner !== me'><h3>{{ message.owner }} : </h3>{{ message.text }}</div>
+				</div>
+			</div>
+			<div id="people">
+				<h3><div id="mynick"></div></h3>
+				<div v-for="user in users"> {{ user }} </div>
+			</div>
+			<div id="chat_foo">
+				<br><input type="text" placeholder="scrivi qui il tuo messaggio" id="m" maxlength="512">
+				<button id="send">send</button>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- my scripts -->
+<script src="vueComponets.js"></script>
+<script src="start-client.js"></script>
+</html>
