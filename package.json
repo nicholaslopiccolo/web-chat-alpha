@@ -1,0 +1,34 @@
+{
+  "name": "web-chat-alpha",
+  "version": "1.0.0",
+  "description": "Per rendere la chat utilizzabile (da raspberry pi) lanciare questo comano - sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port8080",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholaslopiccolo/web-chat-alpha.git"
+  },
+  "keywords": [
+    "nodejs",
+    "webchat",
+    "chip",
+    "chop",
+    "nicholas",
+    "lo",
+    "piccolo"
+  ],
+  "author": "nicholaslopiccolo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholaslopiccolo/web-chat-alpha/issues"
+  },
+  "homepage": "https://github.com/nicholaslopiccolo/web-chat-alpha#readme",
+  "dependencies": {
+    "date-and-time": "^0.6.3",
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0",
+    "winston": "^3.2.1"
+  }
+}
